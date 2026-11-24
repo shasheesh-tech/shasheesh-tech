@@ -14,7 +14,7 @@ I’m **Shasheesh**, a computer science student building practical C++ projects�
 
 ---
 
-## ⚡ Selected projects
+##⚡ Selected projects
 
 | Project | What it is | Focus |
 |---|---|---|
