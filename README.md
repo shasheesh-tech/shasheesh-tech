@@ -3,7 +3,8 @@
 # SHASHEESH
 
 **CSE student at Vardhaman College of Engineering, Hyderabad.**  
-*I build full-stack apps, AI agents and vision-language pipelines, with security in mind.*
+*Turning terminal noise, raw caffeine, and neural weights into living systems.*  
+*Chasing the sweet spot where low-level speed meets autonomous intelligence.*
 
 [Featured Projects](#-featured-projects) · [Engineering Toolkit](#-engineering-toolkit) · [Hackathons & Milestones](#-hackathons--milestones) · [GitHub Activity](#-github-activity) · [How I Build](#-how-i-build)
 

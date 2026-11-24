@@ -211,27 +211,35 @@
     </text>
 
     <!-- Line 1: Academic Affiliation -->
-    <g transform="translate(0, 150)">
+    <g transform="translate(0, 146)">
       <circle cx="5" cy="5" r="3.5" fill="#38bdf8" />
-      <text x="18" y="9" class="sans-text" font-size="15" font-weight="500" fill="#cbd5e1">
+      <text x="18" y="9" class="sans-text" font-size="14.5" font-weight="500" fill="#cbd5e1">
         CSE student at Vardhaman College of Engineering, Hyderabad.
       </text>
     </g>
 
-    <!-- Line 2: Focus / What I Build -->
-    <g transform="translate(0, 178)">
-      <circle cx="5" cy="5" r="3.5" fill="#00f5d4" />
-      <text x="18" y="9" class="sans-text" font-size="15" font-weight="500" fill="#94a3b8">
-        I build full-stack apps, AI agents, and systems with security in mind.
+    <!-- Line 2: Creative Moody Liner 1 -->
+    <g transform="translate(0, 172)">
+      <circle cx="5" cy="3" r="3" fill="#00f5d4" />
+      <text x="18" y="9" class="sans-text" font-size="13.5" font-weight="500" fill="#a5f3fc">
+        Turning terminal noise, raw caffeine, and neural weights into living systems.
       </text>
     </g>
 
-    <!-- Line 3: Featured Repositories Card -->
-    <g transform="translate(0, 218)">
-      <rect x="0" y="0" width="560" height="52" rx="8" fill="#0a101d" stroke="#1e293b" stroke-width="1" />
-      <rect x="0" y="0" width="4" height="52" rx="2" fill="#00f5d4" />
-      <text x="18" y="20" class="mono-text" font-size="9" font-weight="700" letter-spacing="1.5" fill="#38bdf8">FEATURED REPOSITORIES // ACTIVE BUILDS</text>
-      <text x="18" y="38" class="mono-text" font-size="12" font-weight="600" fill="#e2e8f0">
+    <!-- Line 3: Creative Moody Liner 2 -->
+    <g transform="translate(0, 196)">
+      <circle cx="5" cy="3" r="3" fill="#a855f7" />
+      <text x="18" y="9" class="sans-text" font-size="13.5" font-weight="500" fill="#e9d5ff">
+        Chasing the sweet spot where low-level speed meets autonomous intelligence.
+      </text>
+    </g>
+
+    <!-- Line 4: Featured Repositories Card -->
+    <g transform="translate(0, 226)">
+      <rect x="0" y="0" width="560" height="48" rx="8" fill="#0a101d" stroke="#1e293b" stroke-width="1" />
+      <rect x="0" y="0" width="4" height="48" rx="2" fill="#00f5d4" />
+      <text x="18" y="18" class="mono-text" font-size="8.5" font-weight="700" letter-spacing="1.5" fill="#38bdf8">FEATURED REPOSITORIES // ACTIVE BUILDS</text>
+      <text x="18" y="36" class="mono-text" font-size="11.5" font-weight="600" fill="#e2e8f0">
         TrustGuardian AI · FOCUS · AIMGOD · StockSense · C++
       </text>
     </g>
