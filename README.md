@@ -1,8 +1,10 @@
-![Shasheesh — Developer Command Center](assets/hero.gif)
+![Shasheesh — Noir Crimson Autonomous Command Center](assets/hero.gif)
 
 # SHASHEESH
 
 **CSE Student · AI-Assisted Full-Stack Builder · Practical Systems Maker**
+
+> *"Real growth comes from shipping real projects — breaking things, fixing them, and building sharper systems every cycle."*
 
 I engineer practical software by bridging programming foundations, backend services, databases, and applied AI workflows. I learn best by shipping working projects, verifying real-world edge cases, and building reliable systems from first principles.
 

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shasheesh — Noir Crimson Autonomous Command Center</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #050507;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      padding: 24px;
+      color: #f4f4f5;
+    }
+
+    .banner-shell {
+      width: 100%;
+      max-width: 1200px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.9), 0 0 40px rgba(220, 38, 38, 0.15);
+      border: 1px solid #27272a;
+      position: relative;
+    }
+
+    svg#hero-svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #08080a;
+      user-select: none;
+      cursor: crosshair;
+    }
+
+    .bg-grid {
+      stroke: #17171a;
+      stroke-width: 1;
+    }
+
+    .frame-outline {
+      fill: none;
+      stroke: #27272a;
+      stroke-width: 1.5;
+    }
+
+    .crimson-bar {
+      fill: #dc2626;
+      filter: drop-shadow(0 0 6px rgba(220, 38, 38, 0.6));
+    }
+
+    .slot-badge {
+      fill: #fca5a5;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+    }
+
+    .slot-name {
+      fill: #f4f4f5;
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .slot-quote {
+      fill: #e4e4e7;
+      font-size: 15.5px;
+      font-style: italic;
+      letter-spacing: 0.2px;
+    }
+
+    .slot-card-title {
+      fill: #fca5a5;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .slot-card-text {
+      fill: #d4d4d8;
+      font-size: 12.5px;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+
+    .slot-extra {
+      fill: #a1a1aa;
+      font-size: 12.5px;
+      letter-spacing: 0.8px;
+    }
+
+    .slot-hint {
+      fill: #52525b;
+      font-size: 11px;
+      letter-spacing: 0.6px;
+    }
+
+    /* Reveal animation driven by cursor arrival */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-item.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cursor-agent {
+      will-change: transform;
+    }
+
+    .cursor-tag {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 2px 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner-shell">
+    <svg
+      id="hero-svg"
+      viewBox="0 0 1200 380"
+      width="1200"
+      height="380"
+      role="img"
+      aria-label="Noir Crimson Cursor-Driven Command Center — Shasheesh"
+    >
+      <defs>
+        <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" class="bg-grid" fill="none" />
+        </pattern>
+
+        <!-- Crimson Core Aura -->
+        <radialGradient id="crimson-aura" cx="75%" cy="45%" r="45%">
+          <stop offset="0%" stop-color="#dc2626" stop-opacity="0.22" />
+          <stop offset="60%" stop-color="#991b1b" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#08080a" stop-opacity="0" />
+        </radialGradient>
+
+        <!-- Subtle Left Cyan Atmosphere for Contrast -->
+        <radialGradient id="cyan-ambient" cx="20%" cy="30%" r="35%">
+          <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.06" />
+          <stop offset="100%" stop-color="#08080a" stop-opacity="0" />
+        </radialGradient>
+
+        <!-- Reusable Sharp Vector Cursor Glyph -->
+        <g id="pointer-glyph">
+          <polygon
+            points="0,0 0,22 6,17 11,26 15,24 10,15 17.5,15"
+            fill="#f4f4f5"
+            stroke="#09090b"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+          />
+        </g>
+
+        <!-- Glow filter -->
+        <filter id="crimson-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- Background Layers -->
+      <rect width="1200" height="380" fill="#08080a" />
+      <rect width="1200" height="380" fill="url(#grid-pattern)" />
+      <rect width="1200" height="380" fill="url(#cyan-ambient)" />
+      <rect width="1200" height="380" fill="url(#crimson-aura)" />
+
+      <!-- Outer Border & Crimson Edge Accent Bar -->
+      <rect x="14" y="14" width="1172" height="352" rx="10" class="frame-outline" />
+      <rect x="14" y="14" width="6" height="352" rx="3" class="crimson-bar" />
+
+      <!-- Top Status Pill: Tagline & Active Signal -->
+      <rect x="54" y="38" width="280" height="26" rx="4" fill="#180b0e" stroke="#7f1d1d" stroke-width="1" />
+      <circle cx="70" cy="51" r="4.5" fill="#ef4444" filter="url(#crimson-glow)" />
+      <circle cx="70" cy="51" r="2" fill="#ffffff" />
+      <text x="84" y="55" class="slot-badge">SYSTEM // ACTIVE · CSE & AI BUILDER</text>
+
+      <!-- Right Header Telemetry -->
+      <text x="1150" y="55" text-anchor="end" class="slot-hint">SHASHEESH-TECH // NOIR CRIMSON ENGINE</text>
+
+      <!-- SLOT 1: NAME (Revealed by Cursor #1) -->
+      <g id="group-name" class="reveal-item">
+        <text id="slot-name" x="54" y="116" class="slot-name">SHASHEESH</text>
+        <text x="360" y="112" class="slot-badge" fill="#ef4444">[CSE STUDENT · SYSTEMS BUILDER]</text>
+      </g>
+
+      <!-- SLOT 2: QUOTE / MOTTO (Revealed by Cursor #2) -->
+      <g id="group-quote" class="reveal-item">
+        <rect x="54" y="136" width="3.5" height="38" fill="#dc2626" rx="1.5" />
+        <text x="68" y="159" class="slot-quote">
+          "Real growth comes from shipping real projects — breaking things, fixing them, and building sharper systems every cycle."
+        </text>
+      </g>
+
+      <!-- SLOT 3: CARD 1 - CORE STACK (Revealed by Cursor #3) -->
+      <g id="group-extra-1" class="reveal-item">
+        <rect x="54" y="196" width="360" height="58" rx="8" fill="#0f0f13" stroke="#27272a" />
+        <rect x="66" y="208" width="6" height="6" rx="1" fill="#22d3ee" />
+        <text x="78" y="214" class="slot-card-title">CORE STACK // HIGH CONCURRENCY & AI</text>
+        <text x="66" y="238" class="slot-card-text">C++ · TypeScript · Python · React · FastAPI · Neo4j</text>
+      </g>
+
+      <!-- SLOT 4: CARD 2 - KEY HIGHLIGHTS (Revealed by Cursor #4) -->
+      <g id="group-extra-2" class="reveal-item">
+        <rect x="430" y="196" width="370" height="58" rx="8" fill="#0f0f13" stroke="#27272a" />
+        <rect x="442" y="208" width="6" height="6" rx="1" fill="#facc15" />
+        <text x="454" y="214" class="slot-card-title" fill="#fde047">KEY BUILDS // HACKATHONS & PLATFORMS</text>
+        <text x="442" y="238" class="slot-card-text">TrustGuardian (IARE 2nd) · FOCUS · AIMGOD</text>
+      </g>
+
+      <!-- SLOT 5: CARD 3 - REPO & ARCHITECTURE (Revealed by Cursor #5) -->
+      <g id="group-extra-3" class="reveal-item">
+        <rect x="816" y="196" width="330" height="58" rx="8" fill="#0f0f13" stroke="#27272a" />
+        <rect x="828" y="208" width="6" height="6" rx="1" fill="#a855f7" />
+        <text x="840" y="214" class="slot-card-title" fill="#d8b4fe">FOUNDATIONS // PERSISTENCE & DATA</text>
+        <text x="828" y="238" class="slot-card-text">StockSense · Hospital C++ · DSL Trees</text>
+      </g>
+
+      <!-- FOOTER NOTE & INTERACTION HINT -->
+      <g id="group-footer" class="reveal-item">
+        <text x="54" y="296" class="slot-extra">
+          [STATUS: 5 Public Repos · Enterprise Trust Scoring · Multi-Agent Orchestration · 3D Web]
+        </text>
+        <text x="54" y="324" class="slot-hint">
+          ⚡ Interactive swarm mode: move your mouse or click canvas for dynamic shard bursts
+        </text>
+      </g>
+
+      <!-- Particle / Shard Layer for explosions -->
+      <g id="shard-layer"></g>
+
+      <!-- Animated Cursors Layer -->
+      <g id="cursor-layer">
+        <!-- Cursor 1: Reveals Name (Crimson) -->
+        <g id="cursor-1" class="cursor-agent" transform="translate(900, 80)">
+          <circle cx="8" cy="10" r="16" fill="rgba(239, 68, 68, 0.35)" />
+          <use href="#pointer-glyph" />
+          <rect x="18" y="14" width="46" height="16" rx="3" fill="#180b0e" stroke="#ef4444" stroke-width="0.8" />
+          <text x="41" y="25" text-anchor="middle" fill="#fca5a5" font-size="8" font-weight="700">BUILD</text>
+        </g>
+
+        <!-- Cursor 2: Reveals Quote (Silver) -->
+        <g id="cursor-2" class="cursor-agent" transform="translate(1000, 140)">
+          <circle cx="8" cy="10" r="16" fill="rgba(244, 244, 245, 0.28)" />
+          <use href="#pointer-glyph" />
+          <rect x="18" y="14" width="50" height="16" rx="3" fill="#18181b" stroke="#a1a1aa" stroke-width="0.8" />
+          <text x="43" y="25" text-anchor="middle" fill="#f4f4f5" font-size="8" font-weight="700">SECURE</text>
+        </g>
+
+        <!-- Cursor 3: Reveals Stack Card (Cyan) -->
+        <g id="cursor-3" class="cursor-agent" transform="translate(860, 210)">
+          <circle cx="8" cy="10" r="16" fill="rgba(34, 211, 238, 0.32)" />
+          <use href="#pointer-glyph" />
+          <rect x="18" y="14" width="48" height="16" rx="3" fill="#082f49" stroke="#22d3ee" stroke-width="0.8" />
+          <text x="42" y="25" text-anchor="middle" fill="#a5f3fc" font-size="8" font-weight="700">SCALE</text>
+        </g>
+
+        <!-- Cursor 4: Reveals Highlights Card (Amber) -->
+        <g id="cursor-4" class="cursor-agent" transform="translate(980, 220)">
+          <circle cx="8" cy="10" r="16" fill="rgba(250, 204, 21, 0.32)" />
+          <use href="#pointer-glyph" />
+          <rect x="18" y="14" width="52" height="16" rx="3" fill="#451a03" stroke="#facc15" stroke-width="0.8" />
+          <text x="44" y="25" text-anchor="middle" fill="#fef08a" font-size="8" font-weight="700">ANALYZE</text>
+        </g>
+
+        <!-- Cursor 5: Reveals Foundations Card (Violet) -->
+        <g id="cursor-5" class="cursor-agent" transform="translate(1080, 225)">
+          <circle cx="8" cy="10" r="16" fill="rgba(168, 85, 247, 0.32)" />
+          <use href="#pointer-glyph" />
+          <rect x="18" y="14" width="44" height="16" rx="3" fill="#2e1065" stroke="#a855f7" stroke-width="0.8" />
+          <text x="40" y="25" text-anchor="middle" fill="#e9d5ff" font-size="8" font-weight="700">SHIP</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <script>
+    (function () {
+      const svg = document.getElementById("hero-svg");
+      const shardLayer = document.getElementById("shard-layer");
+
+      const agents = [
+        {
+          el: document.getElementById("cursor-1"),
+          revealEl: document.getElementById("group-name"),
+          home: { x: 880, y: 70 },
+          target: { x: 260, y: 92 },
+          pos: { x: 880, y: 70 },
+          vel: { x: 0, y: 0 },
+          phaseDelay: 200,
+          duration: 1200,
+          revealed: false,
+          color: "#ef4444"
+        },
+        {
+          el: document.getElementById("cursor-2"),
+          revealEl: document.getElementById("group-quote"),
+          home: { x: 980, y: 130 },
+          target: { x: 420, y: 152 },
+          pos: { x: 980, y: 130 },
+          vel: { x: 0, y: 0 },
+          phaseDelay: 1200,
+          duration: 1300,
+          revealed: false,
+          color: "#f4f4f5"
+        },
+        {
+          el: document.getElementById("cursor-3"),
+          revealEl: document.getElementById("group-extra-1"),
+          home: { x: 840, y: 210 },
+          target: { x: 230, y: 220 },
+          pos: { x: 840, y: 210 },
+          vel: { x: 0, y: 0 },
+          phaseDelay: 2200,
+          duration: 1200,
+          revealed: false,
+          color: "#22d3ee"
+        },
+        {
+          el: document.getElementById("cursor-4"),
+          revealEl: document.getElementById("group-extra-2"),
+          home: { x: 960, y: 220 },
+          target: { x: 610, y: 220 },
+          pos: { x: 960, y: 220 },
+          vel: { x: 0, y: 0 },
+          phaseDelay: 3100,
+          duration: 1200,
+          revealed: false,
+          color: "#facc15"
+        },
+        {
+          el: document.getElementById("cursor-5"),
+          revealEl: document.getElementById("group-extra-3"),
+          home: { x: 1080, y: 225 },
+          target: { x: 980, y: 220 },
+          pos: { x: 1080, y: 225 },
+          vel: { x: 0, y: 0 },
+          phaseDelay: 4000,
+          duration: 1100,
+          revealed: false,
+          color: "#a855f7"
+        }
+      ];
+
+      const footerEl = document.getElementById("group-footer");
+      const shardColors = ["#ef4444", "#f4f4f5", "#22d3ee", "#facc15", "#a855f7", "#fb7185"];
+      const shards = [];
+
+      function spawnShardBurst(originX, originY, primaryColor, count = 12) {
+        for (let i = 0; i < count; i++) {
+          const poly = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+          const size = 5 + Math.random() * 6;
+          const pts = `0,${-size} ${size * 0.85},${size * 0.7} ${-size * 0.85},${size * 0.7}`;
+          poly.setAttribute("points", pts);
+          const fill = i < 3 ? primaryColor : shardColors[Math.floor(Math.random() * shardColors.length)];
+          poly.setAttribute("fill", fill);
+          shardLayer.appendChild(poly);
+
+          const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.6;
+          const speed = 2.0 + Math.random() * 3.2;
+          shards.push({
+            el: poly,
+            x: originX,
+            y: originY,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed - 0.8,
+            rot: Math.random() * 360,
+            vRot: (Math.random() - 0.5) * 16,
+            life: 1.0,
+            decay: 0.024 + Math.random() * 0.018
+          });
+        }
+      }
+
+      const startTime = performance.now();
+      let introComplete = false;
+      const pointer = { x: null, y: null, active: false };
+
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+
+      function clientToSvgCoords(clientX, clientY) {
+        const pt = svg.createSVGPoint();
+        pt.x = clientX;
+        pt.y = clientY;
+        const ctm = svg.getScreenCTM();
+        if (!ctm) return { x: 600, y: 190 };
+        const transformed = pt.matrixTransform(ctm.inverse());
+        return { x: transformed.x, y: transformed.y };
+      }
+
+      svg.addEventListener("pointermove", (e) => {
+        const coords = clientToSvgCoords(e.clientX, e.clientY);
+        pointer.x = coords.x;
+        pointer.y = coords.y;
+        pointer.active = true;
+      });
+
+      svg.addEventListener("pointerleave", () => {
+        pointer.active = false;
+      });
+
+      svg.addEventListener("pointerdown", (e) => {
+        const coords = clientToSvgCoords(e.clientX, e.clientY);
+        spawnShardBurst(coords.x, coords.y, "#ef4444", 16);
+      });
+
+      function tick(now) {
+        const elapsed = now - startTime;
+        let allRevealed = true;
+
+        agents.forEach((agent, idx) => {
+          const localElapsed = elapsed - agent.phaseDelay;
+
+          if (!introComplete) {
+            if (localElapsed >= 0) {
+              const progress = Math.min(1, localElapsed / agent.duration);
+              const eased = easeOutCubic(progress);
+              agent.pos.x = agent.home.x + (agent.target.x - agent.home.x) * eased;
+              agent.pos.y = agent.home.y + (agent.target.y - agent.home.y) * eased;
+
+              if (progress >= 0.75 && !agent.revealed) {
+                agent.revealed = true;
+                agent.revealEl.classList.add("is-revealed");
+                spawnShardBurst(agent.pos.x + 8, agent.pos.y + 10, agent.color, 12);
+              }
+            }
+            if (!agent.revealed) {
+              allRevealed = false;
+            }
+          } else {
+            // Interactive cursor swarm around pointer or resting orbits
+            const orbitAngle = now * 0.0016 + idx * 1.25;
+            const orbitRadius = 32 + idx * 7;
+            const anchorX = pointer.active ? pointer.x : agent.target.x + 100;
+            const anchorY = pointer.active ? pointer.y : agent.target.y;
+
+            const desiredX = anchorX + Math.cos(orbitAngle) * orbitRadius;
+            const desiredY = anchorY + Math.sin(orbitAngle * 1.1) * (orbitRadius * 0.6);
+
+            const dx = desiredX - agent.pos.x;
+            const dy = desiredY - agent.pos.y;
+            agent.vel.x = (agent.vel.x + dx * 0.02) * 0.88;
+            agent.vel.y = (agent.vel.y + dy * 0.02) * 0.88;
+
+            agent.pos.x += agent.vel.x;
+            agent.pos.y += agent.vel.y;
+
+            agent.pos.x = Math.max(30, Math.min(1150, agent.pos.x));
+            agent.pos.y = Math.max(30, Math.min(345, agent.pos.y));
+          }
+
+          agent.el.setAttribute("transform", `translate(${agent.pos.x.toFixed(1)}, ${agent.pos.y.toFixed(1)})`);
+        });
+
+        if (!introComplete && allRevealed && elapsed > 5400) {
+          introComplete = true;
+          if (footerEl) footerEl.classList.add("is-revealed");
+        }
+
+        // Shard physics update
+        for (let i = shards.length - 1; i >= 0; i--) {
+          const s = shards[i];
+          s.x += s.vx;
+          s.y += s.vy;
+          s.vy += 0.05; // gravity
+          s.rot += s.vRot;
+          s.life -= s.decay;
+
+          if (s.life <= 0) {
+            s.el.remove();
+            shards.splice(i, 1);
+          } else {
+            s.el.setAttribute(
+              "transform",
+              `translate(${s.x.toFixed(1)}, ${s.y.toFixed(1)}) rotate(${s.rot.toFixed(1)}) scale(${Math.max(0.1, s.life).toFixed(2)})`
+            );
+            s.el.setAttribute("opacity", Math.min(1, s.life * 1.3).toFixed(2));
+          }
+        }
+
+        requestAnimationFrame(tick);
+      }
+
+      requestAnimationFrame(tick);
+    })();
+  </script>
+</body>
+</html>
