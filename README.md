@@ -1,12 +1,9 @@
-![Shasheesh — Noir Crimson Autonomous Command Center](assets/hero.gif)
+![Shasheesh — CSE Student at Vardhaman College of Engineering](assets/hero.svg)
 
 # SHASHEESH
 
-**CSE Student · AI-Assisted Full-Stack Builder · Practical Systems Maker**
-
-> *"Real growth comes from shipping real projects — breaking things, fixing them, and building sharper systems every cycle."*
-
-I engineer practical software by bridging programming foundations, backend services, databases, and applied AI workflows. I learn best by shipping working projects, verifying real-world edge cases, and building reliable systems from first principles.
+**CSE student at Vardhaman College of Engineering, Hyderabad.**  
+*I build full-stack apps, AI agents and vision-language pipelines, with security in mind.*
 
 [Featured Projects](#-featured-projects) · [Engineering Toolkit](#-engineering-toolkit) · [Hackathons & Milestones](#-hackathons--milestones) · [GitHub Activity](#-github-activity) · [How I Build](#-how-i-build)
 

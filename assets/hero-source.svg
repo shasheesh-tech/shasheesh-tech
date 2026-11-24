@@ -1,35 +1,123 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="heroTitle heroDesc">
-  <title id="heroTitle">Shasheesh — Noir Crimson Autonomous Command Center</title>
-  <desc id="heroDesc">A dark noir crimson developer banner featuring an engineering grid, crimson core aura, status badge, quote, three modular tech cards, telemetry, sharp cursor pointer agents, and multi-colored shard bursts.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">Shasheesh — CSE Student &amp; Systems Builder</title>
+  <desc id="heroDesc">A dark cosmic interface banner with smooth drifting stars, rotating orbital gyroscope rings, glowing crystalline singularity core, and concise profile biography.</desc>
+
   <defs>
-    <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" stroke="#17171a" stroke-width="1" fill="none" />
-    </pattern>
+    <style>
+      @keyframes rotCw {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes rotCcw {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+      }
+      @keyframes coreFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+      }
+      @keyframes pulseAura {
+        0%, 100% { transform: scale(0.92); opacity: 0.65; }
+        50% { transform: scale(1.08); opacity: 1.0; }
+      }
+      @keyframes starTwinkleA {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 1.0; }
+      }
+      @keyframes starTwinkleB {
+        0%, 100% { opacity: 0.85; }
+        50% { opacity: 0.15; }
+      }
+      @keyframes starDrift {
+        from { transform: translateX(0px); }
+        to { transform: translateX(1200px); }
+      }
+      @keyframes meteorTrail {
+        0% { transform: translate(0px, 0px); opacity: 0; }
+        4% { opacity: 1; }
+        22% { transform: translate(380px, 190px); opacity: 0; }
+        100% { transform: translate(380px, 190px); opacity: 0; }
+      }
 
-    <radialGradient id="crimson-aura" cx="75%" cy="45%" r="45%">
-      <stop offset="0%" stop-color="#dc2626" stop-opacity="0.22" />
-      <stop offset="60%" stop-color="#991b1b" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#08080a" stop-opacity="0" />
+      .star-twinkle-1 { animation: starTwinkleA 3.2s ease-in-out infinite; }
+      .star-twinkle-2 { animation: starTwinkleB 2.6s ease-in-out infinite; }
+      .star-twinkle-3 { animation: starTwinkleA 4.1s ease-in-out infinite; }
+      .star-drift-layer { animation: starDrift 60s linear infinite; }
+      .meteor { animation: meteorTrail 8s ease-out infinite; }
+
+      .ring-1 { transform-origin: 960px 180px; animation: rotCw 26s linear infinite; }
+      .ring-2 { transform-origin: 960px 180px; animation: rotCcw 20s linear infinite; }
+      .ring-3 { transform-origin: 960px 180px; animation: rotCw 15s linear infinite; }
+      .core-float-group { transform-origin: 960px 180px; animation: coreFloat 4.5s ease-in-out infinite; }
+      .singularity-glow { transform-origin: 960px 180px; animation: pulseAura 3.6s ease-in-out infinite; }
+
+      .mono-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .sans-text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    </style>
+
+    <!-- Deep Space Background Gradient -->
+    <linearGradient id="spaceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04050a" />
+      <stop offset="48%" stop-color="#080c16" />
+      <stop offset="100%" stop-color="#05070f" />
+    </linearGradient>
+
+    <!-- Cosmic Nebulas -->
+    <radialGradient id="nebulaCyan" cx="25%" cy="30%" r="40%">
+      <stop offset="0%" stop-color="#00f5d4" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#04050a" stop-opacity="0" />
     </radialGradient>
 
-    <radialGradient id="cyan-ambient" cx="20%" cy="30%" r="35%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.06" />
-      <stop offset="100%" stop-color="#08080a" stop-opacity="0" />
+    <radialGradient id="nebulaViolet" cx="80%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.13" />
+      <stop offset="60%" stop-color="#3b82f6" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#04050a" stop-opacity="0" />
     </radialGradient>
 
-    <!-- Sharp Cursor Pointer Symbol -->
-    <g id="pointer-glyph">
-      <polygon
-        points="0,0 0,22 6,17 11,26 15,24 10,15 17.5,15"
-        fill="#f4f4f5"
-        stroke="#09090b"
-        stroke-width="1.4"
-        stroke-linejoin="round"
-      />
-    </g>
+    <!-- Ring Gradients -->
+    <linearGradient id="ringGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f5d4" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.2" />
+    </linearGradient>
 
-    <filter id="crimson-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3.5" result="blur" />
+    <linearGradient id="ringGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#ec4899" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.15" />
+    </linearGradient>
+
+    <linearGradient id="ringGrad3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#00f5d4" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Singularity Core Gradient -->
+    <radialGradient id="coreAuraGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="1" />
+      <stop offset="25%" stop-color="#38bdf8" stop-opacity="0.7" />
+      <stop offset="65%" stop-color="#00f5d4" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#00f5d4" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Meteor Gradient Tail -->
+    <linearGradient id="meteorTailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="30%" stop-color="#38bdf8" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#00f5d4" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="coreGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -37,117 +125,177 @@
     </filter>
   </defs>
 
-  <!-- Background Layers -->
-  <rect width="1200" height="380" fill="#08080a" />
-  <rect width="1200" height="380" fill="url(#grid-pattern)" />
-  <rect width="1200" height="380" fill="url(#cyan-ambient)" />
-  <rect width="1200" height="380" fill="url(#crimson-aura)" />
+  <!-- ================= BACKGROUND LAYERS ================= -->
+  <rect width="1200" height="360" rx="16" fill="url(#spaceGradient)" />
+  <rect width="1200" height="360" rx="16" fill="url(#nebulaCyan)" />
+  <rect width="1200" height="360" rx="16" fill="url(#nebulaViolet)" />
 
-  <!-- Outer Frame & Crimson Edge Accent Bar -->
-  <rect x="14" y="14" width="1172" height="352" rx="10" fill="none" stroke="#27272a" stroke-width="1.5" />
-  <rect x="14" y="14" width="6" height="352" rx="3" fill="#dc2626" filter="url(#crimson-glow)" />
+  <!-- Outer Frame -->
+  <rect x="12" y="12" width="1176" height="336" rx="14" fill="none" stroke="#1e293b" stroke-width="1.2" stroke-opacity="0.75" />
 
-  <!-- Top Status Pill: Tagline & Active Signal -->
-  <rect x="54" y="38" width="280" height="26" rx="4" fill="#180b0e" stroke="#7f1d1d" stroke-width="1" />
-  <circle cx="70" cy="51" r="4.5" fill="#ef4444" filter="url(#crimson-glow)" />
-  <circle cx="70" cy="51" r="2" fill="#ffffff" />
-  <text x="84" y="55" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="11" font-weight="700" letter-spacing="1.8" fill="#fca5a5">SYSTEM // ACTIVE · CSE &amp; AI BUILDER</text>
-
-  <!-- Right Header Telemetry -->
-  <text x="1150" y="55" text-anchor="end" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="0.6" fill="#52525b">SHASHEESH-TECH // NOIR CRIMSON ENGINE</text>
-
-  <!-- SLOT 1: NAME -->
-  <text x="54" y="116" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="44" font-weight="800" letter-spacing="-0.5" fill="#f4f4f5">SHASHEESH</text>
-  <text x="360" y="112" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="11" font-weight="700" letter-spacing="1.6" fill="#ef4444">[CSE STUDENT · SYSTEMS BUILDER]</text>
-
-  <!-- SLOT 2: QUOTE / MOTTO -->
-  <rect x="54" y="136" width="3.5" height="38" fill="#dc2626" rx="1.5" />
-  <text x="68" y="159" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="15.5" font-style="italic" letter-spacing="0.2" fill="#e4e4e7">"Real growth comes from shipping real projects — breaking things, fixing them, and building sharper systems every cycle."</text>
-
-  <!-- SLOT 3: CARD 1 - CORE STACK -->
-  <rect x="54" y="196" width="360" height="58" rx="8" fill="#0f0f13" stroke="#27272a" stroke-width="1" />
-  <rect x="66" y="208" width="6" height="6" rx="1" fill="#22d3ee" />
-  <text x="78" y="214" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="10" font-weight="700" letter-spacing="1.5" fill="#22d3ee">CORE STACK // HIGH CONCURRENCY &amp; AI</text>
-  <text x="66" y="238" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="12.5" font-weight="500" letter-spacing="0.5" fill="#d4d4d8">C++ · TypeScript · Python · React · FastAPI · Neo4j</text>
-
-  <!-- SLOT 4: CARD 2 - KEY HIGHLIGHTS -->
-  <rect x="430" y="196" width="370" height="58" rx="8" fill="#0f0f13" stroke="#27272a" stroke-width="1" />
-  <rect x="442" y="208" width="6" height="6" rx="1" fill="#facc15" />
-  <text x="454" y="214" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="10" font-weight="700" letter-spacing="1.5" fill="#facc15">KEY BUILDS // HACKATHONS &amp; PLATFORMS</text>
-  <text x="442" y="238" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="12.5" font-weight="500" letter-spacing="0.5" fill="#d4d4d8">TrustGuardian (IARE 2nd) · FOCUS · AIMGOD</text>
-
-  <!-- SLOT 5: CARD 3 - FOUNDATIONS -->
-  <rect x="816" y="196" width="330" height="58" rx="8" fill="#0f0f13" stroke="#27272a" stroke-width="1" />
-  <rect x="828" y="208" width="6" height="6" rx="1" fill="#a855f7" />
-  <text x="840" y="214" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="10" font-weight="700" letter-spacing="1.5" fill="#a855f7">FOUNDATIONS // PERSISTENCE &amp; DATA</text>
-  <text x="828" y="238" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="12.5" font-weight="500" letter-spacing="0.5" fill="#d4d4d8">StockSense · Hospital C++ · DSL Trees</text>
-
-  <!-- FOOTER TELEMETRY -->
-  <text x="54" y="296" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="12.5" letter-spacing="0.8" fill="#a1a1aa">[STATUS: 5 Public Repos · Enterprise Trust Scoring · Multi-Agent Orchestration · 3D Web]</text>
-  <text x="54" y="324" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="0.6" fill="#52525b">LATENCY: OPTIMAL · PERSISTENCE: READY · ARCHITECTURE: PRODUCTION AGENTS</text>
-
-  <!-- SHARD BURST SPARKS (Geometric Triangles around cursor impact zones) -->
-  <g id="shards-burst-group" opacity="0.9">
-    <!-- Crimson Shards near Name Cursor -->
-    <polygon points="310,85 315,95 306,97" fill="#ef4444" transform="rotate(25 310 90)" />
-    <polygon points="325,102 331,110 322,112" fill="#f4f4f5" transform="rotate(-40 325 105)" />
-    <polygon points="295,115 302,122 293,126" fill="#fb7185" transform="rotate(70 295 120)" />
-
-    <!-- Silver & Crimson Shards near Quote Cursor -->
-    <polygon points="510,140 516,149 507,152" fill="#f4f4f5" transform="rotate(15 510 145)" />
-    <polygon points="528,162 534,171 524,173" fill="#ef4444" transform="rotate(-60 528 165)" />
-
-    <!-- Cyan Shards near Stack Card Cursor -->
-    <polygon points="250,210 257,219 248,222" fill="#22d3ee" transform="rotate(45 250 215)" />
-    <polygon points="268,230 274,237 265,241" fill="#f4f4f5" transform="rotate(-30 268 235)" />
-
-    <!-- Amber Shards near Key Builds Cursor -->
-    <polygon points="635,210 642,220 632,223" fill="#facc15" transform="rotate(80 635 215)" />
-    <polygon points="650,230 657,238 647,242" fill="#f4f4f5" transform="rotate(-15 650 235)" />
-
-    <!-- Violet Shards near Foundations Cursor -->
-    <polygon points="1005,210 1012,220 1002,222" fill="#a855f7" transform="rotate(-45 1005 215)" />
-    <polygon points="1022,230 1029,239 1019,242" fill="#22d3ee" transform="rotate(65 1022 235)" />
+  <!-- ================= STARFIELD ================= -->
+  <!-- Layer 1: Static Micro Stars -->
+  <g fill="#ffffff">
+    <circle cx="85" cy="45" r="0.7" opacity="0.35" />
+    <circle cx="160" cy="95" r="0.8" opacity="0.45" />
+    <circle cx="230" cy="38" r="0.6" opacity="0.3" />
+    <circle cx="310" cy="115" r="0.7" opacity="0.4" />
+    <circle cx="420" cy="40" r="0.8" opacity="0.35" />
+    <circle cx="530" cy="88" r="0.6" opacity="0.4" />
+    <circle cx="670" cy="52" r="0.7" opacity="0.3" />
+    <circle cx="740" cy="110" r="0.8" opacity="0.45" />
+    <circle cx="820" cy="42" r="0.6" opacity="0.35" />
+    <circle cx="890" cy="98" r="0.7" opacity="0.4" />
+    <circle cx="1060" cy="48" r="0.8" opacity="0.35" />
+    <circle cx="1130" cy="105" r="0.6" opacity="0.45" />
+    <circle cx="95" cy="275" r="0.8" opacity="0.4" />
+    <circle cx="185" cy="320" r="0.6" opacity="0.3" />
+    <circle cx="380" cy="290" r="0.7" opacity="0.45" />
+    <circle cx="510" cy="330" r="0.8" opacity="0.35" />
+    <circle cx="640" cy="285" r="0.6" opacity="0.4" />
+    <circle cx="780" cy="325" r="0.8" opacity="0.45" />
+    <circle cx="850" cy="270" r="0.7" opacity="0.35" />
+    <circle cx="1090" cy="315" r="0.8" opacity="0.4" />
+    <circle cx="1145" cy="265" r="0.6" opacity="0.3" />
   </g>
 
-  <!-- Sharp Cursor Agents with Halos & Labels -->
-  <!-- Cursor 1: BUILD (Crimson) -->
-  <g transform="translate(305, 92)">
-    <circle cx="8" cy="10" r="16" fill="#ef4444" fill-opacity="0.32" />
-    <use href="#pointer-glyph" />
-    <rect x="18" y="14" width="46" height="16" rx="3" fill="#180b0e" stroke="#ef4444" stroke-width="0.8" />
-    <text x="41" y="25" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="8" font-weight="700" fill="#fca5a5">BUILD</text>
+  <!-- Layer 2: Twinkling Stars -->
+  <g fill="#e0f2fe">
+    <circle class="star-twinkle-1" cx="120" cy="72" r="1.3" opacity="0.8" />
+    <circle class="star-twinkle-2" cx="280" cy="55" r="1.1" opacity="0.7" />
+    <circle class="star-twinkle-3" cx="490" cy="48" r="1.4" opacity="0.85" />
+    <circle class="star-twinkle-1" cx="620" cy="80" r="1.2" opacity="0.6" />
+    <circle class="star-twinkle-2" cx="770" cy="36" r="1.3" opacity="0.75" />
+    <circle class="star-twinkle-3" cx="1030" cy="65" r="1.5" opacity="0.9" />
+    <circle class="star-twinkle-1" cx="1110" cy="40" r="1.2" opacity="0.7" />
+    <circle class="star-twinkle-2" cx="140" cy="300" r="1.4" opacity="0.85" />
+    <circle class="star-twinkle-3" cx="440" cy="320" r="1.2" opacity="0.65" />
+    <circle class="star-twinkle-1" cx="710" cy="310" r="1.3" opacity="0.8" />
+    <circle class="star-twinkle-2" cx="890" cy="330" r="1.5" opacity="0.9" />
+    <circle class="star-twinkle-3" cx="1120" cy="335" r="1.2" opacity="0.75" />
   </g>
 
-  <!-- Cursor 2: SECURE (Silver) -->
-  <g transform="translate(515, 150)">
-    <circle cx="8" cy="10" r="16" fill="#f4f4f5" fill-opacity="0.25" />
-    <use href="#pointer-glyph" />
-    <rect x="18" y="14" width="50" height="16" rx="3" fill="#18181b" stroke="#a1a1aa" stroke-width="0.8" />
-    <text x="43" y="25" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="8" font-weight="700" fill="#f4f4f5">SECURE</text>
+  <!-- Layer 3: Moving / Drifting Stars Stream -->
+  <g class="star-drift-layer" fill="#7dd3fc" opacity="0.6">
+    <circle cx="-200" cy="130" r="1.0" />
+    <circle cx="-120" cy="210" r="0.9" />
+    <circle cx="-50" cy="70" r="1.2" />
+    <circle cx="150" cy="160" r="0.8" />
+    <circle cx="350" cy="230" r="1.0" />
+    <circle cx="580" cy="140" r="0.9" />
+    <circle cx="760" cy="200" r="1.1" />
+    <circle cx="920" cy="110" r="0.8" />
   </g>
 
-  <!-- Cursor 3: SCALE (Cyan) -->
-  <g transform="translate(255, 218)">
-    <circle cx="8" cy="10" r="16" fill="#22d3ee" fill-opacity="0.3" />
-    <use href="#pointer-glyph" />
-    <rect x="18" y="14" width="48" height="16" rx="3" fill="#082f49" stroke="#22d3ee" stroke-width="0.8" />
-    <text x="42" y="25" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="8" font-weight="700" fill="#a5f3fc">SCALE</text>
+  <!-- Shooting Star Meteor -->
+  <g class="meteor" transform="translate(680, 20)">
+    <line x1="0" y1="0" x2="-80" y2="-40" stroke="url(#meteorTailGrad)" stroke-width="1.8" stroke-linecap="round" />
+    <circle cx="0" cy="0" r="2.2" fill="#ffffff" filter="url(#softGlow)" />
   </g>
 
-  <!-- Cursor 4: ANALYZE (Amber) -->
-  <g transform="translate(640, 218)">
-    <circle cx="8" cy="10" r="16" fill="#facc15" fill-opacity="0.3" />
-    <use href="#pointer-glyph" />
-    <rect x="18" y="14" width="52" height="16" rx="3" fill="#451a03" stroke="#facc15" stroke-width="0.8" />
-    <text x="44" y="25" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="8" font-weight="700" fill="#fef08a">ANALYZE</text>
+  <!-- ================= LEFT: PROFILE & ACADEMIC INFO ================= -->
+  <g transform="translate(64, 0)">
+    <!-- Top Status Badge -->
+    <g transform="translate(0, 42)">
+      <rect x="0" y="0" width="270" height="26" rx="13" fill="#0b1324" stroke="#1e293b" stroke-width="1" />
+      <circle cx="16" cy="13" r="4.5" fill="#00f5d4" filter="url(#softGlow)">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="16" cy="13" r="2" fill="#ffffff" />
+      <text x="28" y="17" class="mono-text" font-size="10" font-weight="700" letter-spacing="1.8" fill="#94a3b8">SYSTEMS · AI · FULL-STACK</text>
+    </g>
+
+    <!-- Name Heading -->
+    <text x="0" y="118" class="sans-text" font-size="48" font-weight="800" letter-spacing="-0.8" fill="#f8fafc">
+      SHASHEESH
+    </text>
+
+    <!-- Line 1: Academic Affiliation -->
+    <g transform="translate(0, 150)">
+      <circle cx="5" cy="5" r="3.5" fill="#38bdf8" />
+      <text x="18" y="9" class="sans-text" font-size="15" font-weight="500" fill="#cbd5e1">
+        CSE student at Vardhaman College of Engineering, Hyderabad.
+      </text>
+    </g>
+
+    <!-- Line 2: Focus / What I Build -->
+    <g transform="translate(0, 178)">
+      <circle cx="5" cy="5" r="3.5" fill="#00f5d4" />
+      <text x="18" y="9" class="sans-text" font-size="15" font-weight="500" fill="#94a3b8">
+        I build full-stack apps, AI agents, and systems with security in mind.
+      </text>
+    </g>
+
+    <!-- Line 3: Featured Repositories Card -->
+    <g transform="translate(0, 218)">
+      <rect x="0" y="0" width="560" height="52" rx="8" fill="#0a101d" stroke="#1e293b" stroke-width="1" />
+      <rect x="0" y="0" width="4" height="52" rx="2" fill="#00f5d4" />
+      <text x="18" y="20" class="mono-text" font-size="9" font-weight="700" letter-spacing="1.5" fill="#38bdf8">FEATURED REPOSITORIES // ACTIVE BUILDS</text>
+      <text x="18" y="38" class="mono-text" font-size="12" font-weight="600" fill="#e2e8f0">
+        TrustGuardian AI · FOCUS · AIMGOD · StockSense · C++
+      </text>
+    </g>
+
+    <!-- Bottom Telemetry Status -->
+    <text x="0" y="310" class="mono-text" font-size="10.5" letter-spacing="0.8" fill="#64748b">
+      ● HYDERABAD, IN · STATUS: OPERATIONAL · VCE CSE
+    </text>
   </g>
 
-  <!-- Cursor 5: SHIP (Violet) -->
-  <g transform="translate(1010, 218)">
-    <circle cx="8" cy="10" r="16" fill="#a855f7" fill-opacity="0.3" />
-    <use href="#pointer-glyph" />
-    <rect x="18" y="14" width="44" height="16" rx="3" fill="#2e1065" stroke="#a855f7" stroke-width="0.8" />
-    <text x="40" y="25" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="8" font-weight="700" fill="#e9d5ff">SHIP</text>
+  <!-- ================= RIGHT: REVOLVING 3D COSMIC LOGO ================= -->
+  <g id="revolving-gyroscope" transform="translate(960, 180)">
+    <!-- Ambient Pulsing Singularity Aura -->
+    <circle class="singularity-glow" cx="0" cy="0" r="76" fill="url(#coreAuraGrad)" />
+
+    <!-- Orbital Ring 1 (Tilted -28°, Cyan-Sapphire) -->
+    <g class="ring-1">
+      <ellipse rx="136" ry="54" fill="none" stroke="url(#ringGrad1)" stroke-width="1.8" transform="rotate(-28)" />
+      <!-- Satellite Beacon on Ring 1 -->
+      <g transform="rotate(-28)">
+        <circle cx="136" cy="0" r="4.5" fill="#00f5d4" filter="url(#softGlow)" />
+        <circle cx="136" cy="0" r="2" fill="#ffffff" />
+      </g>
+    </g>
+
+    <!-- Orbital Ring 2 (Tilted +40°, Violet-Rose) -->
+    <g class="ring-2">
+      <ellipse rx="114" ry="42" fill="none" stroke="url(#ringGrad2)" stroke-width="1.5" transform="rotate(40)" />
+      <!-- Satellite Beacon on Ring 2 -->
+      <g transform="rotate(40)">
+        <circle cx="-114" cy="0" r="4" fill="#a855f7" filter="url(#softGlow)" />
+        <circle cx="-114" cy="0" r="1.8" fill="#ffffff" />
+      </g>
+    </g>
+
+    <!-- Orbital Ring 3 (Tilted +82°, Sky-Cyan) -->
+    <g class="ring-3">
+      <ellipse rx="86" ry="32" fill="none" stroke="url(#ringGrad3)" stroke-width="1.3" transform="rotate(82)" />
+      <!-- Satellite Beacon on Ring 3 -->
+      <g transform="rotate(82)">
+        <circle cx="86" cy="0" r="3.5" fill="#38bdf8" filter="url(#softGlow)" />
+      </g>
+    </g>
+
+    <!-- Floating Crystalline Isometric Core -->
+    <g class="core-float-group">
+      <!-- Dark faceted core base -->
+      <polygon points="0,-26 22,-8 22,14 0,30 -22,14 -22,-8" fill="#070c18" stroke="#1e293b" stroke-width="1.5" />
+      
+      <!-- Top facet -->
+      <polygon points="0,-26 22,-8 0,0 -22,-8" fill="#1e293b" fill-opacity="0.8" stroke="#38bdf8" stroke-width="0.8" />
+      <!-- Right facet -->
+      <polygon points="0,0 22,-8 22,14 0,30" fill="#0f172a" fill-opacity="0.9" stroke="#00f5d4" stroke-width="0.8" />
+      <!-- Left facet -->
+      <polygon points="0,0 0,30 -22,14 -22,-8" fill="#090e1a" stroke="#818cf8" stroke-width="0.8" />
+
+      <!-- Inner Glowing Singularity Beacon -->
+      <circle cx="0" cy="0" r="6" fill="#00f5d4" filter="url(#softGlow)">
+        <animate attributeName="r" values="5;7.5;5" dur="2.4s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="0" cy="0" r="2.5" fill="#ffffff" />
+    </g>
+
+    <!-- Orbit telemetry labels -->
+    <text x="0" y="145" text-anchor="middle" class="mono-text" font-size="9" letter-spacing="2.5" fill="#64748b">ORBITAL // CORE</text>
   </g>
 </svg>
