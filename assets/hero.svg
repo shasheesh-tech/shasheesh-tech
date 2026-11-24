@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Shasheesh — building practical systems</title>
+  <desc id="desc">A dark cosmic interface with teal and violet orbiting rings, a pulsing core, and a developer-focused message.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#050711"/><stop offset=".52" stop-color="#10102a"/><stop offset="1" stop-color="#071a21"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="1" x2="1" y2="0">
+      <stop stop-color="#00f5d4"/><stop offset=".53" stop-color="#74f7ff"/><stop offset="1" stop-color="#a67cff"/>
+    </linearGradient>
+    <radialGradient id="core">
+      <stop stop-color="#e9ffff"/><stop offset=".22" stop-color="#00f5d4"/><stop offset="1" stop-color="#00f5d4" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#9dfcff" stroke-opacity=".06"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="360" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="24" fill="url(#grid)"/>
+  <path d="M0 286 Q260 210 470 282 T900 258 T1200 216" fill="none" stroke="#00f5d4" stroke-opacity=".12"/>
+
+  <g fill="#d9ffff">
+    <circle cx="93" cy="69" r="1.5"><animate attributeName="opacity" values=".2;1;.2" dur="2.8s" repeatCount="indefinite"/></circle>
+    <circle cx="273" cy="302" r="1"><animate attributeName="opacity" values="1;.15;1" dur="3.6s" repeatCount="indefinite"/></circle>
+    <circle cx="1051" cy="85" r="1.4"><animate attributeName="opacity" values=".2;1;.2" dur="2.2s" repeatCount="indefinite"/></circle>
+    <circle cx="1112" cy="281" r="1"><animate attributeName="opacity" values="1;.2;1" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="757" cy="48" r="1"><animate attributeName="opacity" values=".15;1;.15" dur="2.5s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <g transform="translate(1000 180)" fill="none" filter="url(#glow)">
+    <ellipse rx="137" ry="58" stroke="url(#beam)" stroke-width="1.5" opacity=".76">
+      <animateTransform attributeName="transform" type="rotate" from="-28" to="332" dur="24s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse rx="116" ry="42" stroke="#a67cff" stroke-width="1" opacity=".56">
+      <animateTransform attributeName="transform" type="rotate" from="38" to="398" dur="31s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse rx="87" ry="30" stroke="#00f5d4" stroke-width="1" opacity=".4">
+      <animateTransform attributeName="transform" type="rotate" from="82" to="442" dur="19s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle r="84" fill="url(#core)" stroke="none" opacity=".8">
+      <animate attributeName="r" values="73;91;73" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="28" fill="#0b1824" stroke="url(#beam)" stroke-width="2"/>
+    <path d="M-9 11V-11L0-17L9-11V11L0 17Z" stroke="#eaffff" stroke-width="1.5"/>
+    <circle r="5" fill="#00f5d4" stroke="none">
+      <animate attributeName="r" values="4;7;4" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g font-family="Segoe UI,Arial,sans-serif" fill="#ecfeff">
+    <text x="78" y="105" font-size="13" letter-spacing="5" fill="#00f5d4">C++ / AI / BUILDING</text>
+    <text x="72" y="190" font-size="64" font-weight="700" letter-spacing="1">SHASHEESH</text>
+    <text x="78" y="229" font-size="18" letter-spacing="2" fill="#b7c7e5">ENGINEERING IDEAS INTO WORKING SYSTEMS</text>
+    <path d="M78 257H436" stroke="url(#beam)" stroke-width="2" filter="url(#glow)">
+      <animate attributeName="x2" values="180;436;180" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <text x="78" y="294" font-size="12" letter-spacing="3" fill="#8b9bb8">OBJECT-ORIENTED DESIGN · DATA STRUCTURES · AI</text>
+  </g>
+
+  <g fill="#8fa3c3" font-family="Consolas,monospace" font-size="11" letter-spacing="2">
+    <text x="78" y="43">[ BUILD MODE: ACTIVE ]</text>
+    <text x="1024" y="321">CORE // 01</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="358" rx="23" fill="none" stroke="#7af7eb" stroke-opacity=".23"/>
+</svg>
