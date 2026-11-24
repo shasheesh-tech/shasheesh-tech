@@ -6,7 +6,7 @@
 *Turning terminal noise, raw caffeine, and neural weights into living systems.*  
 *Chasing the sweet spot where low-level speed meets autonomous intelligence.*
 
-[Featured Projects](#-featured-projects) · [Engineering Toolkit](#-engineering-toolkit) · [Hackathons & Milestones](#-hackathons--milestones) · [GitHub Activity](#-github-activity) · [How I Build](#-how-i-build)
+[Featured Projects](#-featured-projects) · [Mini Projects](#-mini-projects) · [Engineering Toolkit](#-engineering-toolkit) · [Hackathons & Milestones](#-hackathons--milestones) · [GitHub Activity](#-github-activity) · [How I Build](#-how-i-build)
 
 ---
 
@@ -37,6 +37,20 @@ A multi-agent learning and career platform built to replace fragmented study too
 * **What it does:** Orchestrates on-demand AI agents (Research, Teacher, Roadmap, Quiz, and Interview) to generate dynamic learning roadmaps, evaluate submitted documents via RAG, and simulate real interview dynamics.
 * **My confirmed contributions:** Frontend architecture and AI integration, including multi-agent orchestration workflows and building the AI mock-interview experience with voice-interactive speech input and automated audio/text feedback.
 * **Stack:** Next.js 15 · React 19 · TypeScript · Tailwind CSS 4 · Supabase · PostgreSQL · Gemini / OpenAI APIs · RAG Vector Search
+* **Status:** Functional hackathon release.
+
+---
+
+### 📈 MarketAutopsy AI — Market Intelligence & Risk Analysis Platform
+
+> **Collaborative Project** · Repository: [SaiArnav/Market-Autopsy](https://github.com/SaiArnav/Market-Autopsy)  
+> **Event:** DevOps Hackathon
+
+An AI-driven intelligence platform designed to conduct on-demand deep analysis of corporate public signals across news, hiring patterns, patents, customer sentiment, leadership shifts, and funding rounds to deliver explainable risk scores and strategic reports.
+
+* **What it does:** Runs multi-source data ingestion through an agentic tool-use pipeline, combines real-time evidence evaluation with OpenAI models, and generates validated JSON risk profiles across multiple market dimensions.
+* **My confirmed contributions:** Integration of responsive frontend UI elements, creating the comprehensive platform walkthrough demo video, and delivering the technical voiceover presentation explaining the platform's features and architecture.
+* **Stack:** Next.js 14 · TypeScript · Tailwind CSS · Prisma · PostgreSQL · Framer Motion · Three.js · Recharts · OpenAI APIs
 * **Status:** Functional hackathon release.
 
 ---
@@ -80,19 +94,34 @@ A miniature physical proof-of-concept for real-time transit seat occupancy monit
 
 ---
 
-### 💻 C++ Systems & Algorithmic Foundations
+## 🛠️ Mini Projects & Coursework
 
-* **[Hospital Patient Record Management System](https://github.com/shasheesh-tech/Hospital-patient-Record-system)**  
-  A modular console-based healthcare management system built in C++. Simulates complete hospital workflows including patient admissions/discharges, doctor department schedules, appointment queues, itemized billing with GST and senior citizen discounts, and symptom-guided department triage.  
-  *Role:* **Project Mentor** for the student engineering team.  
-  *Stack:* C++ · OOP (Encapsulation, Inheritance, Polymorphism) · File Handling · STL Containers
+Focused academic and course-end applications demonstrating desktop software engineering, object-oriented design, and systems programming:
 
-* **[DSL Programs](https://github.com/shasheesh-tech/DSL-programs)**  
-  Coursework implementations of classical and advanced data structures: AVL trees, expression parse trees, open and closed hash tables, linked skip lists, dynamic queues, stacks, and polish notation evaluators.  
+### 🏥 [Hospital Patient Record Management System](https://github.com/shasheesh-tech/Hospital-patient-Record-system)
+> **Academic Mini Project** · Summer Project 2025–26 at Vardhaman College of Engineering
+
+A comprehensive terminal-based healthcare operations system built in modern C++. Simulates real-world hospital workflows with interconnected patient records, specialist doctor allocations, appointment queues, itemized billing with GST and senior citizen discounts, and an automated symptom triage recommendation helper.
+* **Role:** **Project Mentor** for the student development team.
+* **Stack:** C++ · OOP (Encapsulation, Inheritance, Polymorphism, Abstraction) · File Handling Persistence · STL Containers (`std::vector`)
+
+---
+
+### 🔍 [FINDIT — Campus Lost & Found System](https://github.com/shasheesh-tech/FINDIT)
+> **Academic Mini Project** · Java Semester Course-End Project at Vardhaman College of Engineering
+
+A standalone Java desktop application built to streamline the lost-and-found process within a university campus, demonstrating comprehensive implementation of Java Swing and AWT GUI components taught throughout the semester.
+* **What it does:** Provides an interactive multi-screen desktop dashboard where campus members can report lost or found belongings, browse active item cards, filter and search listings, view detailed item attributes, and coordinate claiming and return workflows with structured data repositories.
+* **Authorship:** Personal course-end implementation.
+* **Stack:** Java · Java Swing / AWT (Frames, Cards, Layout Managers, Custom Themes) · Object-Oriented Architecture · Repository & Data Models
+
+---
+
+### 📚 Algorithmic Foundations & Coursework Drills
+
+* **[DSL Programs](https://github.com/shasheesh-tech/DSL-programs)** — Coursework implementations of classical and advanced data structures in C++: AVL trees, expression parse trees, open and closed hash tables, linked skip lists, dynamic queues, stacks, and polish notation evaluators.  
   *Stack:* C++ · Algorithmic Data Structures
-
-* **[C++ Practice](https://github.com/shasheesh-tech/cpp)**  
-  Foundational drills, pointer mechanics, recursive algorithms, and object-oriented design experiments.  
+* **[C++ Practice](https://github.com/shasheesh-tech/cpp)** — Foundational drills in pointer manipulation, recursion, memory layout, and modular C++ algorithms.  
   *Stack:* C++
 
 ---
@@ -106,7 +135,7 @@ Technologies I frequently use in current builds and architectures:
 
 | Category | Technologies & Tools |
 | :--- | :--- |
-| **Languages** | ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) |
+| **Languages** | ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) |
 | **Frontend** | ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) |
 | **Backend & APIs** | ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) ![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white) |
 | **Databases & Graph** | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white) ![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white) |
@@ -133,9 +162,15 @@ Foundational tools and languages explored in coursework or domain-specific exper
 * **🚀 Hack2Hire 24-Hour Hackathon — Malla Reddy University**  
   *Project:* FOCUS  
   *Recognition:* Developed and shipped a full multi-agent career learning system and voice-interactive mock interview simulator within 24 hours.
+* **⚡ DevOps Hackathon**  
+  *Project:* MarketAutopsy AI  
+  *Recognition:* Contributed frontend UI element integration and produced the comprehensive platform walkthrough demo and technical voiceover explanation.
 * **🎓 Summer Project 2025–26 — Vardhaman College of Engineering**  
   *Project:* Hospital Patient Record Management System  
   *Recognition:* Served as project mentor for a 5-member student engineering team delivering an OOP-driven healthcare workflow system in C++.
+* **🎓 Java Semester Course-End Project — Vardhaman College of Engineering**  
+  *Project:* FINDIT (Campus Lost & Found System)  
+  *Recognition:* Engineered a campus lost-and-found desktop application in Java Swing/AWT with custom themes, filtering, and repository persistence.
 
 ---
 
